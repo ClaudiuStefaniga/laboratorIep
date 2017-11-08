@@ -1,5 +1,6 @@
 #include "pin.h"
 
+
 Pin::Pin(int pinNumber,int pinDirection,int pinState)
 {
     this -> pinNumber = pinNumber;
@@ -17,9 +18,9 @@ void Pin::set(int value)
 {
     if(pinDirection == 1){ // if output
         if(value == 0)
-            bcm2835_gpio_clr(pinNumber)	// set pin to LOW
+            bcm2835_gpio_clr(pinNumber);	// set pin to LOW
         else    
-            bcm2835_gpio_set(pinNumber)	 // set pin to HIGH
+            bcm2835_gpio_set(pinNumber);	 // set pin to HIGH
     }else{
 
     }

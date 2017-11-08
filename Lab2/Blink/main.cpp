@@ -32,10 +32,13 @@
 #define RANGE 1024
 int main(int argc, char **argv)
 {
-    Pin *pin = new Pin(PIN,BCM2835_GPIO_FSEL_OUTP,0);
-    PWM *pwm = new PWM(1024, 0);
+    bcm2835_set_debug(1);
     if (!bcm2835_init())
         return 1;
+
+    Pin *pin = new Pin(PIN,BCM2835_GPIO_FSEL_OUTP,0);
+    PWM *pwm = new PWM(1024, 0);
+
 
     bcm2835_gpio_fsel(PIN, BCM2835_GPIO_FSEL_ALT5);
 

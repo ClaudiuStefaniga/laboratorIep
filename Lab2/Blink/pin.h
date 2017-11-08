@@ -1,3 +1,4 @@
+#include <bcm2835.h>
 #ifndef PIN_H
 #define PIN_H
 
